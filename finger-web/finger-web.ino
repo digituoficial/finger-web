@@ -1,12 +1,26 @@
 #include <Adafruit_Fingerprint.h>
 #include <SoftwareSerial.h>
+#include <SPI.h>
+#include <Ethernet.h>
+#include <PubSubClient.h>
+
+// Ethernet config
+byte mac[] = {  0xDE, 0xED, 0xBA, 0xFE, 0xFE, 0xED };
+IPAddress ip(, , , );
+IPAddress server(, , , );
+
+// MQTT config
+
+EthernetClient ethClient;
+PubSubClient client(ethClient);
+
+// sensor config
+SoftwareSerial mySerial(2, 3);
+Adafruit_Fingerprint finger = Adafruit_Fingerprint(&mySerial);
+
 
 int getFingerprintID();
-
-SoftwareSerial mySerial(2, 3);
-
-
-Adafruit_Fingerprint finger = Adafruit_Fingerprint(&mySerial);
+int reconnect();
 
 void setup()  
 {

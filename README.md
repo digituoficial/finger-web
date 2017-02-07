@@ -17,4 +17,4 @@ Configure o sensor conforme a tabela
 |    White      |       Digital3   |
 |    Black      |       GND        |
 
-você pode colocar os cabos `Green` e `Black` em qualquer outra porta digital desde que mude no momento  da instancia de `mySerial()`
+Você pode colocar os cabos `Green` e `Black` em qualquer outra porta digital desde que mude no momento  da instancia de `mySerial()`.
