@@ -31,7 +31,7 @@ void loop()
 }
 
 int getFingerprintID() {
-  uint8_t p = finger.getImage();
+  uint8_t p = finger.getImage(); // search erros
   if (p != FINGERPRINT_OK)  return -1;
 
   p = finger.image2Tz();
