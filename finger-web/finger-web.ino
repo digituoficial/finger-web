@@ -6,13 +6,14 @@
 
 // Ethernet config
 byte mac[] = {  0xDE, 0xED, 0xBA, 0xFE, 0xFE, 0xED };
-IPAddress ip(, , , );
-IPAddress server(, , , );
+//IPAddress ip(, , , );
+//IPAddress server(, , , );
 
 // MQTT config
 
-EthernetClient ethClient;
-PubSubClient client(ethClient);
+//EthernetClient ethClient;
+//PubSubClient client(ethClient);
+#define PORT 1883
 
 // sensor config
 SoftwareSerial mySerial(2, 3);
@@ -24,11 +25,12 @@ int reconnect();
 
 void setup()  
 {
-  Serial.begin(9600);
+  Serial.begin(57600);
 
 
   finger.begin(57600);
-  
+  //client.setServer(server, PORT);
+
   if (finger.verifyPassword()) {
     Serial.println("Sensor encontrado!");
   } else {
