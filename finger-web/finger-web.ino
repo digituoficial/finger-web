@@ -12,7 +12,7 @@ void setup()
 {
   Serial.begin(9600);
 
-  // set the data rate for the sensor serial port
+
   finger.begin(57600);
   
   if (finger.verifyPassword()) {
@@ -24,10 +24,10 @@ void setup()
   Serial.println("COLOQUE SEU DEDO :)");
 }
 
-void loop()                     // run over and over again
+void loop()
 {
   getFingerprintID();
-  delay(50);            //don't ned to run this at full speed.
+  delay(50);
 }
 
 int getFingerprintID() {
@@ -40,7 +40,6 @@ int getFingerprintID() {
   p = finger.fingerFastSearch();
   if (p != FINGERPRINT_OK)  return -1;
   
-  // found a match!
   Serial.print("SUA ID FOI ENCONTRADA. ESSA --> ");
   Serial.print(finger.fingerID); // print finger id
   Serial.print(" Dado de confidencia ");
