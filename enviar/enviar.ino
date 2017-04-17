@@ -32,10 +32,10 @@ void reconnect() {
       while (true) {
       Serial.println(TTS);      
       if (TTS % 2) {
-       client.publish("teste", "digital reconhecida"); 
-      } else { client.publish("teste", "digital desconhecida");}
+       client.publish("fingerprint/receive", "digital reconhecida"); 
+      } else { client.publish("fingerprint/receive", "digital desconhecida");}
       delay(5000);
-      client.subscribe("inTopic");
+      client.subscribe("fingerprint/confirm");
       TTS++;
       }
       // ... and resubscribe
